@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JPEG to SVG Converter</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="logo-link" href="/" aria-label="Home">
+        <img
+          class="logo"
+          src="/public/images/4e8a690b-fab5-4d75-b9e1-7499b8cc68f9.png"
+          alt=""
+        />
+      </a>
+    </header>
+
+    <main class="shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Browser based JPEG to SVG conversion</p>
+        <h1 id="page-title">Convert JPEG images into downloadable SVG files.</h1>
+        <p class="lede">
+          Drop a JPEG into the workspace, preview the result, and download the SVG without
+          uploading your image anywhere.
+        </p>
+      </section>
+
+      <section class="converter" aria-label="JPEG to SVG converter">
+        <div class="drop-zone" id="dropZone">
+          <input id="fileInput" type="file" accept="image/jpeg,.jpg,.jpeg" />
+          <div class="drop-content">
+            <span class="drop-icon" aria-hidden="true">+</span>
+            <strong>Choose a JPEG or drop it here</strong>
+            <span>Private, instant, and processed entirely in this browser.</span>
+          </div>
+        </div>
+
+        <div class="workspace">
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>Source JPEG</h2>
+              <span id="sourceMeta">No file selected</span>
+            </div>
+            <div class="preview-frame">
+              <img id="sourcePreview" alt="" />
+              <span class="empty-state" id="sourceEmpty">JPEG preview</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>SVG Output</h2>
+              <span id="svgMeta">Waiting for image</span>
+            </div>
+            <div class="preview-frame svg-preview" id="svgPreview">
+              <span class="empty-state" id="svgEmpty">SVG preview</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="secondary" type="button" id="resetButton" disabled>Reset</button>
+          <button class="primary" type="button" id="downloadButton" disabled>
+            Download SVG
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
